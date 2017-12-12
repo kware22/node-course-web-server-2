@@ -37,21 +37,26 @@ hbs.registerHelper('screamIt', (text) => {
     return text.toUpperCase();
 })
 
-app.get("/" , (req, res) => {
+app.get('/' , (req, res) => {
     res.render('home.hbs', {
         welcomeMessage: 'Hello, you made it to my page!',
         pageTitle: 'Home Page',
     });
 });
 
-app.get("/about", (req, res) => {
+app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About Pages',
     });
 
 });
 
-app.get("/bad" , (req, res) => {
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs');
+
+})
+
+app.get('/bad' , (req, res) => {
     res.send({
         errorMessage: 'Unable to access page.'
     });
